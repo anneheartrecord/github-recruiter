@@ -115,6 +115,8 @@ github-recruiter stats
 
 ## 效果展示
 
+### 搜索采集
+
 ```bash
 $ github-recruiter search "kubernetes" --language go --min-stars 500
 
@@ -147,13 +149,36 @@ $ github-recruiter search "kubernetes" --language go --min-stars 500
 
 总计 130 个独立用户
 
-  ✅ juliens → julien.salleyron@traefik.io
-  ✅ PetrMc → petr.mcallister@gmail.com
-  ⬜ sttts → 无公开邮箱
+  ✅ user_a → u***a@company.io
+  ✅ user_b → u***b@gmail.com
+  ⬜ user_c → 无公开邮箱
+  ✅ user_d → u***d@outlook.com
+  ⬜ user_e → 无公开邮箱
   ...
 
 采集完成！新增 122 个候选人，其中 57 人有邮箱
 ```
+
+### 查看候选人
+
+```bash
+$ github-recruiter list
+
+                                              候选人列表
+┏━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+┃ ID   ┃ 用户名        ┃ 姓名                 ┃ 邮箱             ┃ 仓库       ┃ 关键词     ┃ 状态    ┃ 采集时间         ┃
+┡━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+│ 130  │ user_a        │ Alice A.             │ a***@company.io  │ kubernetes │ kubernetes │ pending │ 2026-04-05 02:57 │
+│ 129  │ user_b        │ Bob B.               │ b***@redhat.com  │ traefik    │ kubernetes │ pending │ 2026-04-05 02:57 │
+│ 128  │ user_c        │ Charlie C.           │ 无               │ minio      │ kubernetes │ pending │ 2026-04-05 02:56 │
+│ 127  │ user_d        │ David D.             │ d***@gmail.com   │ istio      │ kubernetes │ pending │ 2026-04-05 02:56 │
+│ 126  │ user_e        │ Eve E.               │ 无               │ etcd       │ kubernetes │ pending │ 2026-04-05 02:55 │
+│ ...  │ ...           │ ...                  │ ...              │ ...        │ ...        │ ...     │ ...              │
+│ 1    │ user_z        │ Zara Z.              │ z***@traefik.io  │ traefik    │ kubernetes │ pending │ 2026-04-05 02:33 │
+└──────┴───────────────┴──────────────────────┴──────────────────┴────────────┴────────────┴─────────┴──────────────────┘
+```
+
+> 以上输出已脱敏处理，实际使用时会显示真实的用户名和邮箱地址。
 
 ## License
 
