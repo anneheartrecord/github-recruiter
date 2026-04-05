@@ -7,3 +7,4 @@ candidates.db
 .DS_Store
 dist/
 build/
+.venv/
