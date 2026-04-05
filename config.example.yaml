@@ -1,0 +1,20 @@
+github:
+  token: "ghp_your_token_here"    # GitHub Personal Access Token (需要 public_repo scope)
+
+smtp:
+  host: "smtp.gmail.com"          # SMTP 服务器
+  port: 587                        # TLS 端口
+  username: "you@gmail.com"
+  password: "your-app-password"    # Gmail 需要用应用专用密码
+  from_name: "Your Name"
+
+search:
+  min_stars: 100                   # 最低 star 数
+  max_repos: 10                    # 最多搜索几个仓库
+  max_contributors: 50             # 每个仓库最多提取几个贡献者
+  languages: []                    # 限定语言，空=不限
+
+sending:
+  delay_seconds: 10                # 每封邮件间隔秒数（防垃圾邮件）
+  daily_limit: 50                  # 每日发送上限
+  template: "templates/default.txt"
